@@ -1,17 +1,16 @@
 import express from "express";
 import mongoose from "mongoose";
-import Book from "./Book.js";
-import Author from "./Author.js";
+import cors from "cors"
 import router from "./router.js";
 const PORT = 5000;
-const DEAFULT_ID = 4;
 const DB_URL = "mongodb+srv://ded14181998:kDGcbCmQSV9YgzXL@cluster0.8eacxim.mongodb.net/?retryWrites=true&w=majority"
 
 const app = express();
 
 
 app.use(express.json())
-app.use('/api', router)
+app.use('/api',cors(), router)
+app.use(cors())
 
 
 
